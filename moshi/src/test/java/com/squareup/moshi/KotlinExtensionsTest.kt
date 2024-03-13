@@ -33,6 +33,9 @@ annotation class TestAnnotation2
 @TestAnnotation2
 class KotlinExtensionsTest {
 
+  /**
+   * @tests:ABC-987 @itemTitle:"Required value is absent" @itemId:12444
+   */
   @Test
   fun nextAnnotationsShouldWork() {
     val annotations = KotlinExtensionsTest::class.java.annotations
@@ -46,6 +49,7 @@ class KotlinExtensionsTest {
     assertTrue(next.first() is TestAnnotation1)
   }
 
+  // @tests:ABC-555 @itemTitle:"Required difference" @itemId:2222
   @Test
   fun arrayType() {
     val stringArray = String::class.asArrayType()
