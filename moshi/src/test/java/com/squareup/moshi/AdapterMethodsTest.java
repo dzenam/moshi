@@ -37,6 +37,9 @@ import okio.ByteString;
 import org.junit.Test;
 
 public final class AdapterMethodsTest {
+  /*
+   * @tests:ABC-123 @itemTitle:'My title' @itemId:123
+   */
   @Test
   public void toAndFromJsonViaListOfIntegers() throws Exception {
     Moshi moshi = new Moshi.Builder().add(new PointAsListOfIntegersJsonAdapter()).build();
@@ -58,6 +61,7 @@ public final class AdapterMethodsTest {
     }
   }
 
+  // @tests:ABC-456 @itemTitle:Testing_something
   @Test
   public void toAndFromJsonWithWriterAndReader() throws Exception {
     Moshi moshi = new Moshi.Builder().add(new PointWriterAndReaderJsonAdapter()).build();
@@ -121,6 +125,7 @@ public final class AdapterMethodsTest {
     }
   }
 
+  // @tests:ABC-789 @itemTitle:"Longer title"
   @Test
   public void toAndFromWithDelegate() throws Exception {
     Moshi moshi = new Moshi.Builder().add(new PointJsonAdapterWithDelegate()).build();
