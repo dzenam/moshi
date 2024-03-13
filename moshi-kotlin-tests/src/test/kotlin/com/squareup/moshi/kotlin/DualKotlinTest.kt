@@ -38,6 +38,9 @@ class DualKotlinTest {
     .addLast(KotlinJsonAdapterFactory())
     .build()
 
+  /**
+   * @tests:ABC-987 @itemTitle:"Required value is absent" @itemId:12444
+   */
   @Test fun requiredValueAbsent() {
     val jsonAdapter = moshi.adapter<RequiredValueAbsent>()
 
@@ -53,6 +56,7 @@ class DualKotlinTest {
   @JsonClass(generateAdapter = true)
   class RequiredValueAbsent(var a: Int = 3, var b: Int)
 
+  // @tests:ABC-555 @itemTitle:"Required difference" @itemId:2222
   @Test fun requiredValueWithDifferentJsonNameAbsent() {
     val jsonAdapter = moshi.adapter<RequiredValueWithDifferentJsonNameAbsent>()
 
